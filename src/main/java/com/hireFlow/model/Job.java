@@ -1,5 +1,4 @@
 package com.hireFlow.model;
-
 import com.hireFlow.enums.JobStatus;
 import jakarta.persistence.*;
 import lombok.*;
