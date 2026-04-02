@@ -33,8 +33,12 @@ public class Job {
     @Column(name ="status",nullable = false)
     private JobStatus status;
     @PrePersist
+    public void setAppliedDate(){
+        this.appliedDate= LocalDate.now();
+    }
     @PreUpdate
     public void updateTimestamp() {
+
         this.lastUpdated = LocalDateTime.now();
     }
 }

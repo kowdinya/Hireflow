@@ -5,6 +5,8 @@ import com.hireFlow.repository.JobRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class JobService {
 
@@ -17,6 +19,12 @@ public class JobService {
         throw new RuntimeException("Job cannot be null");
     }
     return jobRepository.save(job);
+    }
+    public List<Job> getJobsByUserId(Long userId){
+        if(userId==null){
+            throw new IllegalArgumentException("user Id cannot be null");
+        }
+        return jobRepository.findByUserId(userId);
     }
 
 }
