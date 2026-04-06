@@ -4,6 +4,7 @@ import com.hireFlow.dto.JobRequestDto;
 import com.hireFlow.enums.JobStatus;
 import com.hireFlow.model.Job;
 import com.hireFlow.service.JobService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class JobController {
     }
 
     @PostMapping
-    public Job saveJob(@RequestBody JobRequestDto dto){
+    public Job saveJob( @RequestBody @Valid JobRequestDto dto){
         System.out.println("companyName from request:  " +dto);
         return jobService.saveJob(dto);
         }
