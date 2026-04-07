@@ -18,7 +18,8 @@ public class JobService {
 
     public Job saveJob(JobRequestDto dto){
     if(dto== null){
-        throw new RuntimeException("Job cannot be null");
+        //throw new RuntimeException("Job cannot be null");
+        throw new RuntimeException("Test error");
     }
         Job job = new Job();
     job.setUserId(dto.getUserId());
